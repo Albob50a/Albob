@@ -99,3 +99,14 @@ client.on('message', message => {
   message.channel.sendEmbed(embed);
     }
 });
+
+
+client.on('message', message => { //Toxic Codes
+    if(message.channel.type === 'dm') {//Toxic Codes
+        var guildID = 'Guild ID'; // <=============== 587533600761839618//Toxic Codes
+        if(message.content.includes('discord.gg/')) {//Toxic Codes
+            var member = client.guilds.find(g => g.id === guildID).members.find(m => m.id === message.author.id);//Toxic Codes
+            member.ban({ reason: 'ADS In Private.' }).catch();//Toxic Codes
+        }//Toxic Codes
+    }//Toxic Codes
+});//Toxic Codes
